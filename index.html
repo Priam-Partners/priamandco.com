@@ -252,6 +252,41 @@
       line-height: 1.55;
     }
 
+    .cal-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: var(--teal);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+      position: relative;
+    }
+    .cal-btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255,255,255,0.15);
+      pointer-events: none;
+    }
+    .cal-btn:hover {
+      background: var(--ink);
+      transform: translateY(-1px);
+    }
+    .cal-btn .cal-arrow {
+      font-size: 13px;
+      transition: transform .25s cubic-bezier(.2,.7,.3,1);
+    }
+    .cal-btn:hover .cal-arrow { transform: translateX(4px); }
+
     /* Visual side — monumental blason + typographic crest */
     .visual {
       position: relative;
@@ -402,6 +437,10 @@
           <div class="note" data-i18n="note">
             En attendant l'ouverture du site, nous répondons personnellement à chaque message.
           </div>
+          <a class="cal-btn" href="https://cal.eu/fabien-pessot" target="_blank" rel="noopener">
+            <span data-i18n="calLabel">Prendre rendez-vous</span>
+            <span class="cal-arrow">→</span>
+          </a>
         </div>
       </section>
 
@@ -455,7 +494,8 @@
             tickerTop: 'EST. MMXVII',
             tickerBot: 'LILLE · FR',
             tag1: 'Conseil', tag2: 'Investissement', tag3: 'Transmission', tag4: 'Gouvernance',
-            copyright: '© MMXVII–MMXXVI Priam Partners · Lille'
+            copyright: '© MMXVII–MMXXVI Priam Partners · Lille',
+            calLabel: 'Prendre rendez-vous'
           },
           en: {
             tag: 'Strategic advisory for leaders',
@@ -470,7 +510,8 @@
             tickerTop: 'EST. MMXVII',
             tickerBot: 'LILLE · FR',
             tag1: 'Advisory', tag2: 'Investment', tag3: 'Succession', tag4: 'Governance',
-            copyright: '© MMXVII–MMXXVI Priam Partners · Lille'
+            copyright: '© MMXVII–MMXXVI Priam Partners · Lille',
+            calLabel: 'Book a meeting'
           }
         };
 
